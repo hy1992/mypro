@@ -1,0 +1,31 @@
+2018-8-20:
+
+AJAX: Asynchrous Javascript and XML
+	利用浏览器内嵌的浏览器对象XMLHTTPRequest，
+	来发送请求到服务器
+
+2，JQuery发送AJAX请求
+	1，调用JQuery的ajax()方法
+	2，调用时需要传入配置参数
+	3，在配置参数中要设置两个回调函数，分别对应
+	正常响应时如何处理结果，和未响应时如何处理错误
+	
+	$.ajax({
+		url:"/check",#请求路径
+		data:{"uname":name},#发送请求时携带的参数
+		type:"post",#发送请求的方式
+		datatype:"json",#服务器返回的数据类型
+		async:true,#是否用异步的形式
+
+		#当服务器正常响应时,调用该函数
+		success:function(data){
+			console.log('success:'+data);
+		},
+
+		#当服务器未正常响应时,调用该函数
+		error:function(err){
+			console.log('error:'+err);
+		},
+	});
+
+
